@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="src/styles.css">
+  <script src="https://kit.fontawesome.com/cccd62b7b2.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Weather</title>
+</head>
+
+<body>
+  <div class="container card weather-app">
+    <div class="row  align-items-center">
+      <p>current date</p>
+      <div class="col-2 text-end">
+        <i class="fa-solid fa-sun header-icon"></i>
+      </div>
+
+      <div class="col-7">
+        <h1 id="current-temperature" class="header-temperature">25</h1>
+        <span class="units">
+          <a id="celsius-temperature" href="">°C </a>
+          <!-- <a id="fahrenheit-temperature" href="">| °F </a> -->
+        </span>
+        <h3 id="current-city" class="header-city"></h3>
+      </div>
+
+      <div class="col-3 text-end header-more">
+        Humidity: <span id="humidity">%</span>
+        <div class="col">
+          Wind: <span id="wind">test</span>
+        </div>
+      </div>
+    </div>
+    <div class="row row-cols-5 text-center forecast">
+      <div class="col">
+        Sun
+        <div class="col">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="col">
+          max - 25°C
+        </div>
+        <div class="col">
+          min - 25°C
+        </div>
+      </div>
+
+      <div class="col">
+        Mon
+        <div class="col">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="col">
+          max - 25°C
+        </div>
+        <div class="col">
+          min - 25°C
+        </div>
+      </div>
+
+      <div class="col">
+        Tue
+        <div class="col">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="col">
+          max - 25°C
+        </div>
+        <div class="col">
+          min - 25°C
+        </div>
+      </div>
+
+      <div class="col">
+        Wed
+        <div class="col">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="col">
+          max - 25°C
+        </div>
+        <div class="col">
+          min - 25°C
+        </div>
+      </div>
+
+      <div class="col">
+        Thu
+        <div class="col">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="col">
+          max - 25°C
+        </div>
+        <div class="col">
+          min - 25°C
+        </div>
+      </div>
+    </div>
+    <div class="row text-center city-search">
+      <form id="search-form" class="search-form">
+        <input id="city-input" type="text" placeholder="City Name" class="text-input" />
+        <input type="submit" value="Search" class="button-input" />
+        <input id="current-location" type="submit" value="Current Location" class="button-input1" />
+
+      </form>
+    </div>
+  </div>
+  <script src="src/index.js"></script>
+</body>
+
+</html>
