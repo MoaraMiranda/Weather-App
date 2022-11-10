@@ -66,3 +66,11 @@ a:hover {
   margin-top: 10px;
   position: absolute;
 }
+.footer {
+  text-align: center;
+  line-height: 30px;
+  
+}
+.footer a {
+  cursor: pointer;
+}
