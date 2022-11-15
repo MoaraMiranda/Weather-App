@@ -59,6 +59,14 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = `${Math.round(
     response.data.wind.speed
   )}Km/h`;
+
+  document.querySelector("#description").innerHTML = response.data.condition.description;
+
+  document.querySelector(
+    "#icon"
+  ).setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`)
+   
+
 }
 // Current location
 function setLocation(position) {
