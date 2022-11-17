@@ -23,17 +23,16 @@ let days = [
   "Saturday",
 ];
 let day = days[currentDate.getDay()];
-paragraph.innerHTML = `${day} ${hour}:${minutes}`;
+paragraph.innerHTML = `${day} - ${hour}:${minutes}`;
 
 //Global variables
 let units = "metric"; // metric or imperial
 let typeLastCall = "location"; // location or search
 let apiKey = "ee38ce771f31t049ab81b0of21a152fe";
 
-
 // Search Engeneering
 function searchCity(event) {
-  if (event){
+  if (event) {
     event.preventDefault();
   }
   typeLastCall = "search";
@@ -60,13 +59,18 @@ function showTemperature(response) {
     response.data.wind.speed
   )}Km/h`;
 
-  document.querySelector("#description").innerHTML = response.data.condition.description;
+  document.querySelector("#description").innerHTML =
+    response.data.condition.description;
 
-  document.querySelector(
-    "#icon"
-  ).setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`)
-   
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    );
 
+  var background = document.querySelector(".bg");
+  background.style.backgroundImage = `url(images/${response.data.condition.icon}.jpg)`;
 }
 // Current location
 function setLocation(position) {
@@ -90,13 +94,13 @@ function changeTemperature(event) {
   if (event.target.id === "celsius-temperature") {
     units = "metric";
   } else {
-    units = "imperial"
-  }   
-  
+    units = "imperial";
+  }
+
   // chamar funcao searchCity ou getPosition dependendo de qual foi chamada por ultimo passando metric como unit
-  if (typeLastCall === "search"){
+  if (typeLastCall === "search") {
     searchCity();
-  }else{
+  } else {
     getPosition();
   }
 }
