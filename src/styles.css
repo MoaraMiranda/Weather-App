@@ -1,9 +1,9 @@
 body {
   background: rgb(0, 212, 255);
   background: linear-gradient(
-    122deg,
-    rgba(0, 70, 255, 1) 0%,
-    rgba(255, 0, 177, 1) 100%
+    90deg,
+    rgba(0, 70, 255, .70) 20%,
+    rgba(255, 0, 177, .80) 100%
   );
   color: #fff;
 }
@@ -24,7 +24,7 @@ a {
 }
 a:hover {
   cursor: pointer;
-  color: black;
+  color: #ff0199;
 }
 input {
   border-radius: 10px;
@@ -37,6 +37,8 @@ input {
   height: 100%;
   position: fixed;
   top: 0;
+  z-index: -1;
+  
 }
 .weather-app {
   max-width: 600px;
@@ -97,7 +99,7 @@ input {
   text-align: center;
   line-height: 30px;
 }
-.footer a {
+.footer a{
   cursor: pointer;
 }
 .forecast > .col {
