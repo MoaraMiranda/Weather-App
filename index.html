@@ -14,11 +14,12 @@
 </head>
 
 <body>
+  <div class="bg"></div>
   <div class="container card weather-app">
     <div class="row  align-items-center">
-      <p>current date</p>
+      <div><p>current date</p></div>
       <div class="col-2 text-end">
-        <img src="" id="icon" ></img>
+        <img src="" id="icon" alt="weather-description" />
       </div>
 
       <div class="col-7">
@@ -27,7 +28,7 @@
           <a id="celsius-temperature" href="">°C </a>
           <a id="fahrenheit-temperature" href="">| °F </a>
         </span>
-        <h3 id="current-city" class="header-city"></h3>
+        <h3 id="current-city" class="header-city">--</h3>
       </div>
 
       <div class="col-3 text-end header-more">
@@ -108,7 +109,7 @@
       <form id="search-form" class="search-form">
         <input id="city-input" type="text" placeholder="City Name" class="text-input" />
         <input type="submit" value="Search" class="button-input" />
-        <input id="current-location" type="submit" value="Current Location" class="button-input1" />
+        <input id="current-location" type="submit" value="My location" class="button-input1" />
       </form>
     </div>
   </div>
