@@ -44,6 +44,36 @@ function searchCity(event) {
 let city = document.querySelector("#search-form");
 city.addEventListener("submit", searchCity);
 
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  let forecastHTML = "";
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col weather-forecast-day">
+       ${day}
+        <div class="col">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="col">
+          <spam class="weather-forecast-temperature-max">35°</spam>
+          <spam class="weather-forecast-temperature-min">25°</spam>
+        </div>
+      </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast (coordinates) {
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.temperature.current
@@ -71,6 +101,8 @@ function showTemperature(response) {
 
   var background = document.querySelector(".bg");
   background.style.backgroundImage = `url(images/${response.data.condition.icon}.jpg)`;
+  
+   getForecast(response.data.coordinates);
 }
 // Current location
 function setLocation(position) {

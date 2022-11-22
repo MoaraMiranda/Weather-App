@@ -17,7 +17,9 @@
   <div class="bg"></div>
   <div class="container card weather-app">
     <div class="row  align-items-center">
-      <div><p>current date</p></div>
+      <div>
+        <p>current date</p>
+      </div>
       <div class="col-2 text-end">
         <img src="" id="icon" alt="weather-description" />
       </div>
@@ -39,72 +41,7 @@
         <div id="description">--</div>
       </div>
     </div>
-    <div class="row row-cols-5 text-center forecast">
-      <div class="col">
-        Sun
-        <div class="col">
-          <i class="fa-solid fa-sun"></i>
-        </div>
-        <div class="col">
-          max - 25°C
-        </div>
-        <div class="col">
-          min - 25°C
-        </div>
-      </div>
-
-      <div class="col">
-        Mon
-        <div class="col">
-          <i class="fa-solid fa-sun"></i>
-        </div>
-        <div class="col">
-          max - 25°C
-        </div>
-        <div class="col">
-          min - 25°C
-        </div>
-      </div>
-
-      <div class="col">
-        Tue
-        <div class="col">
-          <i class="fa-solid fa-sun"></i>
-        </div>
-        <div class="col">
-          max - 25°C
-        </div>
-        <div class="col">
-          min - 25°C
-        </div>
-      </div>
-
-      <div class="col">
-        Wed
-        <div class="col">
-          <i class="fa-solid fa-sun"></i>
-        </div>
-        <div class="col">
-          max - 25°C
-        </div>
-        <div class="col">
-          min - 25°C
-        </div>
-      </div>
-
-      <div class="col">
-        Thu
-        <div class="col">
-          <i class="fa-solid fa-sun"></i>
-        </div>
-        <div class="col">
-          max - 25°C
-        </div>
-        <div class="col">
-          min - 25°C
-        </div>
-      </div>
-    </div>
+    <div id="forecast" class="row row-cols-5 text-center forecast"></div>
     <div class="row text-center city-search">
       <form id="search-form" class="search-form">
         <input id="city-input" type="text" placeholder="City Name" class="text-input" />
