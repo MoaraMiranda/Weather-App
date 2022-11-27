@@ -91,6 +91,10 @@ function getForecast (coordinates) {
 }
 
 function showTemperature(response) {
+  if(response.data.message === "City not found"){
+    alert("City not found, try again!")
+    return
+  } 
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.temperature.current
   );
