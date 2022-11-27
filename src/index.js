@@ -44,26 +44,42 @@ function searchCity(event) {
 let city = document.querySelector("#search-form");
 city.addEventListener("submit", searchCity);
 
+function formatDayForcast(timestamp){
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+return days[day];
+}
+
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let forecastHTML = "";
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col weather-forecast-day">
-       ${day}
+       ${formatDayForcast(forecastDay.time)}
         <div class="col">
-          <i class="fa-solid fa-sun"></i>
+           <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+             forecastDay.condition.icon
+           }.png" alt="weather-description" />
         </div>
         <div class="col">
-          <spam class="weather-forecast-temperature-max">35°</spam>
-          <spam class="weather-forecast-temperature-min">25°</spam>
+          <spam class="weather-forecast-temperature-max">${Math.round(
+            forecastDay.temperature.maximum
+          )}°</spam>
+          <spam class="weather-forecast-temperature-min">${Math.round(
+            forecastDay.temperature.minimum
+          )}°</spam>
         </div>
       </div>`;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
