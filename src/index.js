@@ -103,7 +103,7 @@ function showTemperature(response) {
 
   document.querySelector("#wind").innerHTML = `${Math.round(
     response.data.wind.speed
-  )}Km/h`;
+  )} Km/h`;
 
   document.querySelector("#description").innerHTML =
     response.data.condition.description;
@@ -145,7 +145,7 @@ function changeTemperature(event) {
     units = "imperial";
   }
 
-  // chamar funcao searchCity ou getPosition dependendo de qual foi chamada por ultimo passando metric como unit
+  // call function searchCity or getPosition depending on which was called last passing metric as unit
   if (typeLastCall === "search") {
     searchCity();
   } else {
