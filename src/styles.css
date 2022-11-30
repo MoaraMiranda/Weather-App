@@ -42,7 +42,7 @@ input {
 }
 .weather-app {
   max-width: 600px;
-  margin-top: 100px;
+  margin-top: 40px;
   padding: 30px;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.2);
