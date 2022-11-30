@@ -73,8 +73,8 @@ function displayForecast(response) {
         <div class="col">
           <spam class="weather-forecast-temperature-max">${Math.round(
             forecastDay.temperature.maximum
-          )}°</spam>
-          <spam class="weather-forecast-temperature-min">${Math.round(
+          )}° </spam>
+          <spam class="weather-forecast-temperature-min">/ ${Math.round(
             forecastDay.temperature.minimum
           )}°</spam>
         </div>
